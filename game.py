@@ -19,7 +19,7 @@ BLACK = (0, 0, 0)
 
 # block size
 BLOCK_SIZE = 20
-SPEED = 10000
+SPEED = 40 
 
 # font
 pygame.init()

@@ -128,7 +128,7 @@ def train():
                 highest_score = score
                 torch.save(agent.model.state_dict(), 'model.pt')
 
-            print('Game:', agent.n_games, 'Score:', score, 'Record:', highest_score)
+            #print('Game:', agent.n_games, 'Score:', score, 'Record:', highest_score)
 
 
 if __name__ == '__main__':
