@@ -112,16 +112,19 @@ class SnakeGame:
     
 
     def update_ui(self):
+        # reset ui
         self.display.fill(BLACK)
+
+        # draw snake
         for point in self.snake:
             pygame.draw.rect(self.display, BLUE, pygame.Rect(point.x, point.y, BLOCK_SIZE, BLOCK_SIZE))
             pygame.draw.rect(self.display, LIGHTBLUE, pygame.Rect(point.x + 4, point.y + 4, BLOCK_SIZE - 8, BLOCK_SIZE - 8))
         
+        # draw apple
         pygame.draw.rect(self.display, RED, pygame.Rect(self.food.x, self.food.y, BLOCK_SIZE, BLOCK_SIZE))
 
-        # render text
+        # render text, place at (0,0)
         text = font.render(f'Score: {self.score}', True, WHITE)
-        # place at (0,0)
         self.display.blit(text, [0, 0])
         pygame.display.flip()
 
@@ -154,6 +157,7 @@ class SnakeGame:
             reward = 10
             self.place_food()
         # if not found food, delete off end (looks like its moving)
+        # if food was found, extra block won't be deleted.
         else:
             self.snake.pop()
 
